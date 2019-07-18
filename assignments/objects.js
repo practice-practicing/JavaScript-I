@@ -29,7 +29,10 @@ const Kennan = {
   "id": 2,
   "name": "Kennan",
   "email": "kdiben1@tinypic.com",
-  "gender": "M"
+  "gender": "M",
+  "speak": function() {
+    return this.name;
+  }
 }
 
 const Keven = {
@@ -50,22 +53,25 @@ const Antonietta = {
   "id": 5,
   "name": "Antonietta",
   "email": "adaine5@samsung.com",
-  "gender": "F"
+  "gender": "F",
+  "multiplyNums": function(a, b) {
+    return a * b;
+  }
 }
 
 // ==== Challenge 2: Reading Object Data ==== 
 // Once your objects are created, log out the following requests from HR into the console:
 
 // Mitzi's name
-
+console.log(Mitzi.name);
 // Kennan's ID
-
+console.log(Kennan.id);
 // Keven's email
-
+console.log(Keven.email);
 // Gannie's name
-
+console.log(Gannie.name);
 // Antonietta's Gender
-
+console.log(Antoniettas.gender);
 // ==== Challenge 3: Object Methods ==== 
 // Give Kennan the ability to say "Hello, my name is Kennan!" Use the console.log provided as a hint.
 // console.log(kennan.speak());
@@ -82,16 +88,37 @@ const Antonietta = {
 // 3. Nest a grandchild object in the child object with properties for name and age.  The name will be Sam and the age will be 30
 // 4. Give each of the objects the ability to speak their names using the this keyword.
 
-const parent = {}
+const parent = {
+  "name": "Susan",
+  "age": 70,
+  "child":{
+    "name": "George",
+    "age": 50,
+    "speak": function() {
+    return this.name;
+      "grandchild":{
+        "name": "Sam",
+        "age": 30,
+        "speak": function() {
+          return this.name;
+        }
+      }
+    }
+  }
+  "speak": function() {
+    return this.name;
+}
+}
 
 // Log the parent object's name
-
+  console.log(parent.name);
 // Log the child's age
-
+  console.log(child.age);
 // Log the name and age of the grandchild
-
+  console.log(grandchild.name, grandchild.age);
 // Have the parent speak
-
+  console.log(parent.speak());
 // Have the child speak
-
+  console.log(child.speak());
 // Have the grandchild speak
+  console.log(grandchild.speak());
